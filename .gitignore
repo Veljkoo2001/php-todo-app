@@ -1,0 +1,24 @@
+# Ignoriši konfiguracione fajlove sa senzitivnim podacima
+config.php
+
+# Ignoriši fajlove okruženja
+.env
+.env.local
+.env.*.local
+
+# Ignoriši IDE fajlove
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignoriši log fajlove
+*.log
+
+# Ignoriši sistemske fajlove
+.DS_Store
+Thumbs.db
+
+# Ignoriši composer fajlove (ako kasnije dodajete)
+vendor/
+composer.lock
