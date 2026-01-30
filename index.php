@@ -1,11 +1,16 @@
 <?php
 include 'config.php';
 
+// Ako korisnik nije prijavljen, preusmeri ga
+if (!isLoggedIn()) {
+    header('Location: login.php');
+    exit();
+}
+
 // Dohvatanje svih zadataka
 $stmt = $pdo->query("SELECT * FROM tasks ORDER BY created_at DESC");
 $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -16,6 +21,28 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigacioni meni -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-tasks"></i> To-Do Lista
+            </div>
+            <div class="nav-user">
+                <span>Zdravo, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                <a href="logout.php" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Odjavi se
+                </a>
+            </div>
+        </div>
+    </nav>
+    <?php if (isset($_SESSION['success'])): ?>
+    <div class="alert alert-success">
+        <?php 
+        echo htmlspecialchars($_SESSION['success']);
+        unset($_SESSION['success']);
+        ?>
+    </div>
+<?php endif; ?>
     <div class="container">
         <h1><i class="fas fa-tasks"></i> Moja To-Do Lista</h1>
         
@@ -57,14 +84,22 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endif; ?>
         </ul>
         
-        <!-- Statistika -->
         <?php if (count($tasks) > 0): ?>
             <?php
+            // Brojanje završenih zadataka TRENUTNOG KORISNIKA
             $total = count($tasks);
-            $completed = $pdo->query("SELECT COUNT(*) FROM tasks WHERE is_completed = 1")->fetchColumn();
+            
+            // Ručno brojanje završenih iz niza
+            $completed = 0;
+            foreach ($tasks as $task) {
+                if ($task['is_completed'] == 1) {
+                    $completed++;
+                }
+            }
+            
             $pending = $total - $completed;
+            $progress = $total > 0 ? round(($completed / $total) * 100) : 0;
             ?>
-            <div class="stats">
                 <span>Ukupno: <?php echo $total; ?></span>
                 <span>Završeni: <?php echo $completed; ?></span>
                 <span>U toku: <?php echo $pending; ?></span>
