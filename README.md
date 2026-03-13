@@ -1,3 +1,9 @@
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
 ✅ PHP To-Do App – Web Application
 
 This project is a simple web-based To-Do application built using PHP, HTML, CSS, and SQL. The application allows users to create, read, update, and delete (CRUD) tasks, helping them manage daily activities and organize their workflow.
@@ -5,11 +11,11 @@ The goal of this project is to demonstrate server-side scripting, form handling,
 
 🔍 Features
 
-Add Tasks – Users can create new tasks by entering a title and optional description.
-View Tasks – Displays all tasks in a structured table or list format.
-Edit Tasks – Users can update task information (title, description, or status).
-Delete Tasks – Users can remove tasks they have completed or no longer need.
-Mark as Completed – Optionally, tasks can be marked as done to distinguish pending and completed items.
+➕ Add Tasks – Users can create new tasks by entering a title and optional description.
+👁️ View Tasks – Displays all tasks in a structured table or list format.
+✏️ Edit Tasks – Users can update task information (title, description, or status).
+❌ Delete Tasks – Users can remove tasks they have completed or no longer need.
+✅ Mark as Completed – Optionally, tasks can be marked as done to distinguish pending and completed items.
 
 ⚙️ How It Works (Program Logic)
 
@@ -89,3 +95,14 @@ Table: users
 - email (VARCHAR, Index)
 - password_hash (VARCHAR)
 - created_at (TIMESTAMP)
+
+📸 Screenshot
+![App Screenshot](screenshot.png)
+
+👨‍💻 The author
+
+**Veljkoo2001**
+- GitHub: [@Veljkoo2001](https://github.com/Veljkoo2001)
+
+📝 License
+This project is licensed under [MIT licencom](LICENSE).
