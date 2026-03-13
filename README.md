@@ -9,7 +9,7 @@
 This project is a simple web-based To-Do application built using PHP, HTML, CSS, and SQL. The application allows users to create, read, update, and delete (CRUD) tasks, helping them manage daily activities and organize their workflow.
 The goal of this project is to demonstrate server-side scripting, form handling, database interactions, and frontend integration using PHP, while keeping the code clean and maintainable.
 
-##🔍 Features
+## 🔍 Features
 
 ➕ Add Tasks – Users can create new tasks by entering a title and optional description.
 👁️ View Tasks – Displays all tasks in a structured table or list format.
