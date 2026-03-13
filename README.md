@@ -11,11 +11,11 @@ The goal of this project is to demonstrate server-side scripting, form handling,
 
 ## 🔍 Features
 
-➕ Add Tasks – Users can create new tasks by entering a title and optional description.
-👁️ View Tasks – Displays all tasks in a structured table or list format.
-✏️ Edit Tasks – Users can update task information (title, description, or status).
-❌ Delete Tasks – Users can remove tasks they have completed or no longer need.
-✅ Mark as Completed – Optionally, tasks can be marked as done to distinguish pending and completed items.
+- ➕ **Add Tasks** – Users can create new tasks by entering a title and optional description.
+- 👁️ **View Tasks** – Displays all tasks in a structured table or list format.
+- ✏️ **Edit Tasks** – Users can update task information (title, description, or status).
+- ❌ **Delete Tasks** – Users can remove tasks they have completed or no longer need.
+- ✅ **Mark as Completed** – Optionally, tasks can be marked as done to distinguish pending and completed items.
 
 ⚙️ How It Works (Program Logic)
 
